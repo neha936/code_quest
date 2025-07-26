@@ -1,0 +1,166 @@
+:root {
+  --bg: #e0fcff;
+  --text: #333;
+  --accent: #4caf50;
+  --secondary: #ffffff; /* White background for quiz cards */
+}
+
+body.dark-mode {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #90ee90;
+  --secondary: #2a2a2a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  width: 90%;
+  max-width: 650px;
+  background: var(--secondary);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+input, button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+ul#options {
+  list-style: none;
+  padding: 0;
+}
+
+ul#options li {
+  background: var(--bg);
+  margin: 10px 0;
+  padding: 12px;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+ul#options li:hover,
+ul#options li.selected {
+  background-color: var(--accent);
+  color: white;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+#progress-bar {
+  height: 8px;
+  background: var(--accent);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  transition: width 0.3s;
+}
+
+#darkModeToggle {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.2rem;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 15px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
